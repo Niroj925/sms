@@ -5,7 +5,7 @@ const path= require('path');
 const mongoose = require('mongoose');
 const viewpath = path.join(__dirname, './view');
 
-const client=require('twilio')('ACc495fd51357629b07f63d7e49844f773','c465a0877cb12d2ca5298a63f71a5243');
+const client=require('twilio')('ACc495fd51357629b07f63d7e49844f773','37a09b689b58620ac3bef2efb8e03e65');
 
 app.set('view engine', 'ejs');
 app.set('views',viewpath);
@@ -28,6 +28,7 @@ app.get('/',function(req, res){
 
 app.post('/',function(req, res){
     const text=req.body.message;
+    const number=req.body.number;
     console.log(text);
    
 
@@ -50,7 +51,7 @@ app.post('/',function(req, res){
   //send messages using twilio
    client.messages.create({
     body:text,
-    to:'+9779867816329',
+    to:'+977'+number,
     from:'+16204728692'
 }).then(message =>console.log('message sent'))
 

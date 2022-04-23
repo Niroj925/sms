@@ -4,11 +4,14 @@
         <title>message</title>
     </body>
     <body>
-        <h1>sent message:<%-message.msg%></h1>
-        <div class="msg">
+       <h3>You can send message only in verified number</h3>
+        <p>sent message:<%-message.msg%></p>
+         <div class="msg">
             <form action="/" method="post">
                 <level for="msgbox">Your message</level>
-                <input type="text" name="message">
+                <input type="text" name="message"><br>
+                <level for="numbox">Number</level>
+                <input type="text" name="number"><br>
                 <button type="submit" name="send" >send</button>
             </form>
         </div>
